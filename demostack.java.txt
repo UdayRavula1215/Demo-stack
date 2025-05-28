@@ -1,0 +1,79 @@
+package maccess;
+import java.util.*;
+
+public class DemoStack
+{
+@SuppressWarnings(&quot;removal&quot;)
+public static void main(String[] args)
+{
+Scanner s = new Scanner(System.in);
+try(s;){
+Stack&lt;Integer&gt; st = new Stack&lt;Integer&gt;();
+while(true) {
+System.out.println(&quot;------Choice-----&quot;);
+System.out.println(&quot;\t1.push(E)&quot;
++ &quot;\n\t2.pop()&quot;
++ &quot;\n\t3.peek()&quot;
++ &quot;\n\t4.search(E)&quot;
++ &quot;\n\t5.Exit&quot;);
+System.out.println(&quot;Enter the Choice:&quot;);
+int choice = s.nextInt();
+switch(choice) {
+case 1:
+System.out.println(&quot;Enter the ele to add to
+Stack:&quot;);
+st.push(new Integer(s.nextInt()));
+System.out.println(&quot;data in stack :
+&quot;+st.toString());
+break;
+case 2:
+if(st.empty()) {
+System.out.println(&quot;Stack is empty...&quot;);
+}else {
+st.pop();
+System.out.println(&quot;Ele deleted from the top-
+of-stack&quot;);
+System.out.println(&quot;data in stack :
+&quot;+st.toString());
+}
+break;
+case 3:
+if(st.empty()) {
+System.out.println(&quot;Stack is empty...&quot;);
+}else {
+System.out.println(&quot;peek ele : &quot;+st.peek());
+System.out.println(&quot;data in stack :
+&quot;+st.toString());
+}
+break;
+case 4:
+
+if(st.empty()) {
+System.out.println(&quot;Stack is empty...&quot;);
+}else {
+System.out.println(&quot;Enter the ele to be
+searched from Stack:&quot;);
+Integer el = new Integer(s.nextInt());
+int pos = st.search(el);
+if(pos&gt;0) {
+System.out.println(el+&quot; found at
+position &quot;+pos);
+}else {
+System.out.println(&quot;Ele not found in the
+Stack...&quot;);
+}
+}
+break;
+case 5:
+System.out.println(&quot;Operations Stopped on
+Stack...&quot;);
+System.exit(0);
+default:
+System.out.println(&quot;Invalid Choice...&quot;);
+}//end of switch
+}//end of while
+}catch(Exception e) {
+e.printStackTrace();
+}
+}
+}
